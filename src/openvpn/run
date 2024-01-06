@@ -1,0 +1,2 @@
+#!/bin/sh
+openvpn --config ${CONFIG_FILE_PATH}
