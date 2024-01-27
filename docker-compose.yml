@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  proxy_server_01:
+    build: ./src
+    container_name: proxy_server_01
+    extends:
+      file: common.yml
+      service: proxy_server
+    volumes:
+      - ./configs/config_01.ovpn:/configs/config_01.ovpn
+    environment:
+      - CONFIG_FILE_PATH=/configs/config_01.ovpn
+      - PROXY_PORT=8080
+    ports:
+      - 8001:8080
+
+  proxy_server_02:
+    build: ./src
+    container_name: proxy_server_02
+    extends:
+      file: common.yml
+      service: proxy_server
+    volumes:
+      - ./configs/config_02.ovpn:/configs/config_02.ovpn
+    environment:
+      - CONFIG_FILE_PATH=/configs/config_02.ovpn
+      - PROXY_PORT=8080
+    ports:
+      - 8002:8080

@@ -1,0 +1,6 @@
+*.log
+*.lock
+node_modules
+.env
+configs
+eng.traineddata
