@@ -1,0 +1,4 @@
+#!/bin/sh
+export TMPDIR=$(mktemp -d)
+envsubst < /src/privoxy/config > ${TMPDIR}/config
+privoxy ${TMPDIR}/config
